@@ -1,0 +1,1723 @@
+---
+cmd: docker
+desc: A self-sufficient runtime for containers
+version: 18.09.2
+options:
+- opt: --config
+  parm: string
+  syn:
+    []
+- opt: -D
+  parm: ''
+  syn:
+  - --debug
+- opt: -H
+  parm: list
+  syn:
+  - --host
+- opt: -l
+  parm: string
+  syn:
+  - --log-level
+- opt: --tls
+- opt: --tlscacert
+  parm: string
+  syn:
+    []
+- opt: --tlscert
+  parm: string
+  syn:
+    []
+- opt: --tlskey
+  parm: string
+  syn:
+    []
+- opt: --tlsverify
+- opt: -v
+  parm: ''
+  syn:
+  - --version
+subcmds:
+  attach:
+    cmd: attach
+    desc: Attach local standard input, output, and error streams to a running container
+    options:
+    - opt: --detach-keys
+      parm: string
+      syn:
+        []
+    - opt: --no-stdin
+    - opt: --sig-proxy
+    usage: docker attach [OPTIONS] CONTAINER
+  build:
+    cmd: build
+    desc: Build an image from a Dockerfile
+    options:
+    - opt: --add-host
+      parm: list
+      syn:
+        []
+    - opt: --build-arg
+      parm: list
+      syn:
+        []
+    - opt: --cache-from
+      parm: strings
+      syn:
+        []
+    - opt: --cgroup-parent
+      parm: string
+      syn:
+        []
+    - opt: --compress
+    - opt: --cpu-period
+      parm: int
+      syn:
+        []
+    - opt: --cpu-quota
+      parm: int
+      syn:
+        []
+    - opt: -c
+      parm: int
+      syn:
+      - --cpu-shares
+    - opt: --cpuset-cpus
+      parm: string
+      syn:
+        []
+    - opt: --cpuset-mems
+      parm: string
+      syn:
+        []
+    - opt: --disable-content-trust
+    - opt: -f
+      parm: string
+      syn:
+      - --file
+    - opt: --force-rm
+    - opt: --iidfile
+      parm: string
+      syn:
+        []
+    - opt: --isolation
+      parm: string
+      syn:
+        []
+    - opt: --label
+      parm: list
+      syn:
+        []
+    - opt: -m
+      parm: bytes
+      syn:
+      - --memory
+    - opt: --memory-swap
+      parm: bytes
+      syn:
+        []
+    - opt: --network
+      parm: string
+      syn:
+        []
+    - opt: --no-cache
+    - opt: --pull
+    - opt: -q
+      parm: ''
+      syn:
+      - --quiet
+    - opt: --rm
+    - opt: --security-opt
+      parm: strings
+      syn:
+        []
+    - opt: --shm-size
+      parm: bytes
+      syn:
+        []
+    - opt: -t
+      parm: list
+      syn:
+      - --tag
+    - opt: --target
+      parm: string
+      syn:
+        []
+    - opt: --ulimit
+      parm: ulimit
+      syn:
+        []
+    usage: docker build [OPTIONS] PATH | URL | -
+  builder:
+    cmd: builder
+    desc: Manage builds
+    subcmds:
+      prune:
+        cmd: prune
+        desc: Remove build cache
+    usage: docker builder COMMAND
+  commit:
+    cmd: commit
+    desc: Create a new image from a container's changes
+    options:
+    - opt: -a
+      parm: string
+      syn:
+      - --author
+    - opt: -c
+      parm: list
+      syn:
+      - --change
+    - opt: -m
+      parm: string
+      syn:
+      - --message
+    - opt: -p
+      parm: ''
+      syn:
+      - --pause
+    usage: docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
+  config:
+    cmd: config
+    desc: Manage Docker configs
+    subcmds:
+      create:
+        cmd: create
+        desc: Create a config from a file or STDIN
+      inspect:
+        cmd: inspect
+        desc: Display detailed information on one or more configs
+      ls:
+        cmd: ls
+        desc: List configs
+      rm:
+        cmd: rm
+        desc: Remove one or more configs
+    usage: docker config COMMAND
+  container:
+    cmd: container
+    desc: Manage containers
+    subcmds:
+      attach:
+        cmd: attach
+        desc: Attach local standard input, output, and error streams to a running container
+      commit:
+        cmd: commit
+        desc: Create a new image from a container's changes
+      cp:
+        cmd: cp
+        desc: Copy files/folders between a container and the local filesystem
+      create:
+        cmd: create
+        desc: Create a new container
+      diff:
+        cmd: diff
+        desc: Inspect changes to files or directories on a container's filesystem
+      exec:
+        cmd: exec
+        desc: Run a command in a running container
+      export:
+        cmd: export
+        desc: Export a container's filesystem as a tar archive
+      inspect:
+        cmd: inspect
+        desc: Display detailed information on one or more containers
+      kill:
+        cmd: kill
+        desc: Kill one or more running containers
+      logs:
+        cmd: logs
+        desc: Fetch the logs of a container
+      ls:
+        cmd: ls
+        desc: List containers
+      pause:
+        cmd: pause
+        desc: Pause all processes within one or more containers
+      port:
+        cmd: port
+        desc: List port mappings or a specific mapping for the container
+      prune:
+        cmd: prune
+        desc: Remove all stopped containers
+      rename:
+        cmd: rename
+        desc: Rename a container
+      restart:
+        cmd: restart
+        desc: Restart one or more containers
+      rm:
+        cmd: rm
+        desc: Remove one or more containers
+      run:
+        cmd: run
+        desc: Run a command in a new container
+      start:
+        cmd: start
+        desc: Start one or more stopped containers
+      stats:
+        cmd: stats
+        desc: Display a live stream of container(s) resource usage statistics
+      stop:
+        cmd: stop
+        desc: Stop one or more running containers
+      top:
+        cmd: top
+        desc: Display the running processes of a container
+      unpause:
+        cmd: unpause
+        desc: Unpause all processes within one or more containers
+      update:
+        cmd: update
+        desc: Update configuration of one or more containers
+      wait:
+        cmd: wait
+        desc: Block until one or more containers stop, then print their exit codes
+    usage: docker container COMMAND
+  cp:
+    cmd: cp
+    desc: Copy files/folders between a container and the local filesystem
+    options:
+    - opt: -a
+      parm: ''
+      syn:
+      - --archive
+    - opt: -L
+      parm: ''
+      syn:
+      - --follow-link
+    usage: docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|-
+  create:
+    cmd: create
+    desc: Create a new container
+    options:
+    - opt: --add-host
+      parm: list
+      syn:
+        []
+    - opt: -a
+      parm: list
+      syn:
+      - --attach
+    - opt: --blkio-weight
+      parm: uint16
+      syn:
+        []
+    - opt: --blkio-weight-device
+      parm: list
+      syn:
+        []
+    - opt: --cap-add
+      parm: list
+      syn:
+        []
+    - opt: --cap-drop
+      parm: list
+      syn:
+        []
+    - opt: --cgroup-parent
+      parm: string
+      syn:
+        []
+    - opt: --cidfile
+      parm: string
+      syn:
+        []
+    - opt: --cpu-period
+      parm: int
+      syn:
+        []
+    - opt: --cpu-quota
+      parm: int
+      syn:
+        []
+    - opt: --cpu-rt-period
+      parm: int
+      syn:
+        []
+    - opt: --cpu-rt-runtime
+      parm: int
+      syn:
+        []
+    - opt: -c
+      parm: int
+      syn:
+      - --cpu-shares
+    - opt: --cpus
+      parm: decimal
+      syn:
+        []
+    - opt: --cpuset-cpus
+      parm: string
+      syn:
+        []
+    - opt: --cpuset-mems
+      parm: string
+      syn:
+        []
+    - opt: --device
+      parm: list
+      syn:
+        []
+    - opt: --device-cgroup-rule
+      parm: list
+      syn:
+        []
+    - opt: --device-read-bps
+      parm: list
+      syn:
+        []
+    - opt: --device-read-iops
+      parm: list
+      syn:
+        []
+    - opt: --device-write-bps
+      parm: list
+      syn:
+        []
+    - opt: --device-write-iops
+      parm: list
+      syn:
+        []
+    - opt: --disable-content-trust
+    - opt: --dns
+      parm: list
+      syn:
+        []
+    - opt: --dns-option
+      parm: list
+      syn:
+        []
+    - opt: --dns-search
+      parm: list
+      syn:
+        []
+    - opt: --entrypoint
+      parm: string
+      syn:
+        []
+    - opt: -e
+      parm: list
+      syn:
+      - --env
+    - opt: --env-file
+      parm: list
+      syn:
+        []
+    - opt: --expose
+      parm: list
+      syn:
+        []
+    - opt: --group-add
+      parm: list
+      syn:
+        []
+    - opt: --health-cmd
+      parm: string
+      syn:
+        []
+    - opt: --health-interval
+      parm: duration
+      syn:
+        []
+    - opt: --health-retries
+      parm: int
+      syn:
+        []
+    - opt: --health-start-period
+      parm: duration
+      syn:
+        []
+    - opt: --health-timeout
+      parm: duration
+      syn:
+        []
+    - opt: --help
+    - opt: -h
+      parm: string
+      syn:
+      - --hostname
+    - opt: --init
+    - opt: -i
+      parm: ''
+      syn:
+      - --interactive
+    - opt: --ip
+      parm: string
+      syn:
+        []
+    - opt: --ip6
+      parm: string
+      syn:
+        []
+    - opt: --ipc
+      parm: string
+      syn:
+        []
+    - opt: --isolation
+      parm: string
+      syn:
+        []
+    - opt: --kernel-memory
+      parm: bytes
+      syn:
+        []
+    - opt: -l
+      parm: list
+      syn:
+      - --label
+    - opt: --label-file
+      parm: list
+      syn:
+        []
+    - opt: --link
+      parm: list
+      syn:
+        []
+    - opt: --link-local-ip
+      parm: list
+      syn:
+        []
+    - opt: --log-driver
+      parm: string
+      syn:
+        []
+    - opt: --log-opt
+      parm: list
+      syn:
+        []
+    - opt: --mac-address
+      parm: string
+      syn:
+        []
+    - opt: -m
+      parm: bytes
+      syn:
+      - --memory
+    - opt: --memory-reservation
+      parm: bytes
+      syn:
+        []
+    - opt: --memory-swap
+      parm: bytes
+      syn:
+        []
+    - opt: --memory-swappiness
+      parm: int
+      syn:
+        []
+    - opt: --mount
+      parm: mount
+      syn:
+        []
+    - opt: --name
+      parm: string
+      syn:
+        []
+    - opt: --network
+      parm: string
+      syn:
+        []
+    - opt: --network-alias
+      parm: list
+      syn:
+        []
+    - opt: --no-healthcheck
+    - opt: --oom-kill-disable
+    - opt: --oom-score-adj
+      parm: int
+      syn:
+        []
+    - opt: --pid
+      parm: string
+      syn:
+        []
+    - opt: --pids-limit
+      parm: int
+      syn:
+        []
+    - opt: --privileged
+    - opt: -p
+      parm: list
+      syn:
+      - --publish
+    - opt: -P
+      parm: ''
+      syn:
+      - --publish-all
+    - opt: --read-only
+    - opt: --restart
+      parm: string
+      syn:
+        []
+    - opt: --rm
+    - opt: --runtime
+      parm: string
+      syn:
+        []
+    - opt: --security-opt
+      parm: list
+      syn:
+        []
+    - opt: --shm-size
+      parm: bytes
+      syn:
+        []
+    - opt: --stop-signal
+      parm: string
+      syn:
+        []
+    - opt: --stop-timeout
+      parm: int
+      syn:
+        []
+    - opt: --storage-opt
+      parm: list
+      syn:
+        []
+    - opt: --sysctl
+      parm: map
+      syn:
+        []
+    - opt: --tmpfs
+      parm: list
+      syn:
+        []
+    - opt: -t
+      parm: ''
+      syn:
+      - --tty
+    - opt: --ulimit
+      parm: ulimit
+      syn:
+        []
+    - opt: -u
+      parm: string
+      syn:
+      - --user
+    - opt: --userns
+      parm: string
+      syn:
+        []
+    - opt: --uts
+      parm: string
+      syn:
+        []
+    - opt: -v
+      parm: list
+      syn:
+      - --volume
+    - opt: --volume-driver
+      parm: string
+      syn:
+        []
+    - opt: --volumes-from
+      parm: list
+      syn:
+        []
+    - opt: -w
+      parm: string
+      syn:
+      - --workdir
+    usage: docker create [OPTIONS] IMAGE [COMMAND] [ARG...]
+  diff:
+    cmd: diff
+    desc: Inspect changes to files or directories on a container's filesystem
+    usage: docker diff CONTAINER
+  events:
+    cmd: events
+    desc: Get real time events from the server
+    options:
+    - opt: -f
+      parm: filter
+      syn:
+      - --filter
+    - opt: --format
+      parm: string
+      syn:
+        []
+    - opt: --since
+      parm: string
+      syn:
+        []
+    - opt: --until
+      parm: string
+      syn:
+        []
+    usage: docker events [OPTIONS]
+  exec:
+    cmd: exec
+    desc: Run a command in a running container
+    options:
+    - opt: -d
+      parm: ''
+      syn:
+      - --detach
+    - opt: --detach-keys
+      parm: string
+      syn:
+        []
+    - opt: -e
+      parm: list
+      syn:
+      - --env
+    - opt: -i
+      parm: ''
+      syn:
+      - --interactive
+    - opt: --privileged
+    - opt: -t
+      parm: ''
+      syn:
+      - --tty
+    - opt: -u
+      parm: string
+      syn:
+      - --user
+    - opt: -w
+      parm: string
+      syn:
+      - --workdir
+    usage: docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+  export:
+    cmd: export
+    desc: Export a container's filesystem as a tar archive
+    options:
+    - opt: -o
+      parm: string
+      syn:
+      - --output
+    usage: docker export [OPTIONS] CONTAINER
+  history:
+    cmd: history
+    desc: Show the history of an image
+    options:
+    - opt: --format
+      parm: string
+      syn:
+        []
+    - opt: -H
+      parm: ''
+      syn:
+      - --human
+    - opt: --no-trunc
+    - opt: -q
+      parm: ''
+      syn:
+      - --quiet
+    usage: docker history [OPTIONS] IMAGE
+  image:
+    cmd: image
+    desc: Manage images
+    subcmds:
+      build:
+        cmd: build
+        desc: Build an image from a Dockerfile
+      history:
+        cmd: history
+        desc: Show the history of an image
+      import:
+        cmd: import
+        desc: Import the contents from a tarball to create a filesystem image
+      inspect:
+        cmd: inspect
+        desc: Display detailed information on one or more images
+      load:
+        cmd: load
+        desc: Load an image from a tar archive or STDIN
+      ls:
+        cmd: ls
+        desc: List images
+      prune:
+        cmd: prune
+        desc: Remove unused images
+      pull:
+        cmd: pull
+        desc: Pull an image or a repository from a registry
+      push:
+        cmd: push
+        desc: Push an image or a repository to a registry
+      rm:
+        cmd: rm
+        desc: Remove one or more images
+      save:
+        cmd: save
+        desc: Save one or more images to a tar archive (streamed to STDOUT by default)
+      tag:
+        cmd: tag
+        desc: Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+    usage: docker image COMMAND
+  images:
+    cmd: images
+    desc: List images
+    options:
+    - opt: -a
+      parm: ''
+      syn:
+      - --all
+    - opt: --digests
+    - opt: -f
+      parm: filter
+      syn:
+      - --filter
+    - opt: --format
+      parm: string
+      syn:
+        []
+    - opt: --no-trunc
+    - opt: -q
+      parm: ''
+      syn:
+      - --quiet
+    usage: docker images [OPTIONS] [REPOSITORY[:TAG]]
+  import:
+    cmd: import
+    desc: Import the contents from a tarball to create a filesystem image
+    options:
+    - opt: -c
+      parm: list
+      syn:
+      - --change
+    - opt: -m
+      parm: string
+      syn:
+      - --message
+    usage: docker import [OPTIONS] file|URL|- [REPOSITORY[:TAG]]
+  info:
+    cmd: info
+    desc: Display system-wide information
+    options:
+    - opt: -f
+      parm: string
+      syn:
+      - --format
+    usage: docker info [OPTIONS]
+  inspect:
+    cmd: inspect
+    desc: Return low-level information on Docker objects
+    options:
+    - opt: -f
+      parm: string
+      syn:
+      - --format
+    - opt: -s
+      parm: ''
+      syn:
+      - --size
+    - opt: --type
+      parm: string
+      syn:
+        []
+    usage: docker inspect [OPTIONS] NAME|ID [NAME|ID...]
+  kill:
+    cmd: kill
+    desc: Kill one or more running containers
+    options:
+    - opt: -s
+      parm: string
+      syn:
+      - --signal
+    usage: docker kill [OPTIONS] CONTAINER [CONTAINER...]
+  load:
+    cmd: load
+    desc: Load an image from a tar archive or STDIN
+    options:
+    - opt: -i
+      parm: string
+      syn:
+      - --input
+    - opt: -q
+      parm: ''
+      syn:
+      - --quiet
+    usage: docker load [OPTIONS]
+  login:
+    cmd: login
+    desc: Log in to a Docker registry
+    options:
+    - opt: -p
+      parm: string
+      syn:
+      - --password
+    - opt: --password-stdin
+    - opt: -u
+      parm: string
+      syn:
+      - --username
+    usage: docker login [OPTIONS] [SERVER]
+  logout:
+    cmd: logout
+    desc: Log out from a Docker registry
+    usage: docker logout [SERVER]
+  logs:
+    cmd: logs
+    desc: Fetch the logs of a container
+    options:
+    - opt: --details
+    - opt: -f
+      parm: ''
+      syn:
+      - --follow
+    - opt: --since
+      parm: string
+      syn:
+        []
+    - opt: --tail
+      parm: string
+      syn:
+        []
+    - opt: -t
+      parm: ''
+      syn:
+      - --timestamps
+    - opt: --until
+      parm: string
+      syn:
+        []
+    usage: docker logs [OPTIONS] CONTAINER
+  network:
+    cmd: network
+    desc: Manage networks
+    subcmds:
+      connect:
+        cmd: connect
+        desc: Connect a container to a network
+      create:
+        cmd: create
+        desc: Create a network
+      disconnect:
+        cmd: disconnect
+        desc: Disconnect a container from a network
+      inspect:
+        cmd: inspect
+        desc: Display detailed information on one or more networks
+      ls:
+        cmd: ls
+        desc: List networks
+      prune:
+        cmd: prune
+        desc: Remove all unused networks
+      rm:
+        cmd: rm
+        desc: Remove one or more networks
+    usage: docker network COMMAND
+  node:
+    cmd: node
+    desc: Manage Swarm nodes
+    subcmds:
+      demote:
+        cmd: demote
+        desc: Demote one or more nodes from manager in the swarm
+      inspect:
+        cmd: inspect
+        desc: Display detailed information on one or more nodes
+      ls:
+        cmd: ls
+        desc: List nodes in the swarm
+      promote:
+        cmd: promote
+        desc: Promote one or more nodes to manager in the swarm
+      ps:
+        cmd: ps
+        desc: List tasks running on one or more nodes, defaults to current node
+      rm:
+        cmd: rm
+        desc: Remove one or more nodes from the swarm
+      update:
+        cmd: update
+        desc: Update a node
+    usage: docker node COMMAND
+  pause:
+    cmd: pause
+    desc: Pause all processes within one or more containers
+    usage: docker pause CONTAINER [CONTAINER...]
+  plugin:
+    cmd: plugin
+    desc: Manage plugins
+    subcmds:
+      create:
+        cmd: create
+        desc: Create a plugin from a rootfs and configuration. Plugin data directory must contain config.json and rootfs directory.
+      disable:
+        cmd: disable
+        desc: Disable a plugin
+      enable:
+        cmd: enable
+        desc: Enable a plugin
+      inspect:
+        cmd: inspect
+        desc: Display detailed information on one or more plugins
+      install:
+        cmd: install
+        desc: Install a plugin
+      ls:
+        cmd: ls
+        desc: List plugins
+      push:
+        cmd: push
+        desc: Push a plugin to a registry
+      rm:
+        cmd: rm
+        desc: Remove one or more plugins
+      set:
+        cmd: set
+        desc: Change settings for a plugin
+      upgrade:
+        cmd: upgrade
+        desc: Upgrade an existing plugin
+    usage: docker plugin COMMAND
+  port:
+    cmd: port
+    desc: List port mappings or a specific mapping for the container
+    usage: docker port CONTAINER [PRIVATE_PORT[/PROTO]]
+  ps:
+    cmd: ps
+    desc: List containers
+    options:
+    - opt: -a
+      parm: ''
+      syn:
+      - --all
+    - opt: -f
+      parm: filter
+      syn:
+      - --filter
+    - opt: --format
+      parm: string
+      syn:
+        []
+    - opt: -n
+      parm: int
+      syn:
+      - --last
+    - opt: -l
+      parm: ''
+      syn:
+      - --latest
+    - opt: --no-trunc
+    - opt: -q
+      parm: ''
+      syn:
+      - --quiet
+    - opt: -s
+      parm: ''
+      syn:
+      - --size
+    usage: docker ps [OPTIONS]
+  pull:
+    cmd: pull
+    desc: Pull an image or a repository from a registry
+    options:
+    - opt: -a
+      parm: ''
+      syn:
+      - --all-tags
+    - opt: --disable-content-trust
+    usage: docker pull [OPTIONS] NAME[:TAG|@DIGEST]
+  push:
+    cmd: push
+    desc: Push an image or a repository to a registry
+    options:
+    - opt: --disable-content-trust
+    usage: docker push [OPTIONS] NAME[:TAG]
+  rename:
+    cmd: rename
+    desc: Rename a container
+    usage: docker rename CONTAINER NEW_NAME
+  restart:
+    cmd: restart
+    desc: Restart one or more containers
+    options:
+    - opt: -t
+      parm: int
+      syn:
+      - --time
+    usage: docker restart [OPTIONS] CONTAINER [CONTAINER...]
+  rm:
+    cmd: rm
+    desc: Remove one or more containers
+    options:
+    - opt: -f
+      parm: ''
+      syn:
+      - --force
+    - opt: -l
+      parm: ''
+      syn:
+      - --link
+    - opt: -v
+      parm: ''
+      syn:
+      - --volumes
+    usage: docker rm [OPTIONS] CONTAINER [CONTAINER...]
+  rmi:
+    cmd: rmi
+    desc: Remove one or more images
+    options:
+    - opt: -f
+      parm: ''
+      syn:
+      - --force
+    - opt: --no-prune
+    usage: docker rmi [OPTIONS] IMAGE [IMAGE...]
+  run:
+    cmd: run
+    desc: Run a command in a new container
+    options:
+    - opt: --add-host
+      parm: list
+      syn:
+        []
+    - opt: -a
+      parm: list
+      syn:
+      - --attach
+    - opt: --blkio-weight
+      parm: uint16
+      syn:
+        []
+    - opt: --blkio-weight-device
+      parm: list
+      syn:
+        []
+    - opt: --cap-add
+      parm: list
+      syn:
+        []
+    - opt: --cap-drop
+      parm: list
+      syn:
+        []
+    - opt: --cgroup-parent
+      parm: string
+      syn:
+        []
+    - opt: --cidfile
+      parm: string
+      syn:
+        []
+    - opt: --cpu-period
+      parm: int
+      syn:
+        []
+    - opt: --cpu-quota
+      parm: int
+      syn:
+        []
+    - opt: --cpu-rt-period
+      parm: int
+      syn:
+        []
+    - opt: --cpu-rt-runtime
+      parm: int
+      syn:
+        []
+    - opt: -c
+      parm: int
+      syn:
+      - --cpu-shares
+    - opt: --cpus
+      parm: decimal
+      syn:
+        []
+    - opt: --cpuset-cpus
+      parm: string
+      syn:
+        []
+    - opt: --cpuset-mems
+      parm: string
+      syn:
+        []
+    - opt: -d
+      parm: ''
+      syn:
+      - --detach
+    - opt: --detach-keys
+      parm: string
+      syn:
+        []
+    - opt: --device
+      parm: list
+      syn:
+        []
+    - opt: --device-cgroup-rule
+      parm: list
+      syn:
+        []
+    - opt: --device-read-bps
+      parm: list
+      syn:
+        []
+    - opt: --device-read-iops
+      parm: list
+      syn:
+        []
+    - opt: --device-write-bps
+      parm: list
+      syn:
+        []
+    - opt: --device-write-iops
+      parm: list
+      syn:
+        []
+    - opt: --disable-content-trust
+    - opt: --dns
+      parm: list
+      syn:
+        []
+    - opt: --dns-option
+      parm: list
+      syn:
+        []
+    - opt: --dns-search
+      parm: list
+      syn:
+        []
+    - opt: --entrypoint
+      parm: string
+      syn:
+        []
+    - opt: -e
+      parm: list
+      syn:
+      - --env
+    - opt: --env-file
+      parm: list
+      syn:
+        []
+    - opt: --expose
+      parm: list
+      syn:
+        []
+    - opt: --group-add
+      parm: list
+      syn:
+        []
+    - opt: --health-cmd
+      parm: string
+      syn:
+        []
+    - opt: --health-interval
+      parm: duration
+      syn:
+        []
+    - opt: --health-retries
+      parm: int
+      syn:
+        []
+    - opt: --health-start-period
+      parm: duration
+      syn:
+        []
+    - opt: --health-timeout
+      parm: duration
+      syn:
+        []
+    - opt: --help
+    - opt: -h
+      parm: string
+      syn:
+      - --hostname
+    - opt: --init
+    - opt: -i
+      parm: ''
+      syn:
+      - --interactive
+    - opt: --ip
+      parm: string
+      syn:
+        []
+    - opt: --ip6
+      parm: string
+      syn:
+        []
+    - opt: --ipc
+      parm: string
+      syn:
+        []
+    - opt: --isolation
+      parm: string
+      syn:
+        []
+    - opt: --kernel-memory
+      parm: bytes
+      syn:
+        []
+    - opt: -l
+      parm: list
+      syn:
+      - --label
+    - opt: --label-file
+      parm: list
+      syn:
+        []
+    - opt: --link
+      parm: list
+      syn:
+        []
+    - opt: --link-local-ip
+      parm: list
+      syn:
+        []
+    - opt: --log-driver
+      parm: string
+      syn:
+        []
+    - opt: --log-opt
+      parm: list
+      syn:
+        []
+    - opt: --mac-address
+      parm: string
+      syn:
+        []
+    - opt: -m
+      parm: bytes
+      syn:
+      - --memory
+    - opt: --memory-reservation
+      parm: bytes
+      syn:
+        []
+    - opt: --memory-swap
+      parm: bytes
+      syn:
+        []
+    - opt: --memory-swappiness
+      parm: int
+      syn:
+        []
+    - opt: --mount
+      parm: mount
+      syn:
+        []
+    - opt: --name
+      parm: string
+      syn:
+        []
+    - opt: --network
+      parm: string
+      syn:
+        []
+    - opt: --network-alias
+      parm: list
+      syn:
+        []
+    - opt: --no-healthcheck
+    - opt: --oom-kill-disable
+    - opt: --oom-score-adj
+      parm: int
+      syn:
+        []
+    - opt: --pid
+      parm: string
+      syn:
+        []
+    - opt: --pids-limit
+      parm: int
+      syn:
+        []
+    - opt: --privileged
+    - opt: -p
+      parm: list
+      syn:
+      - --publish
+    - opt: -P
+      parm: ''
+      syn:
+      - --publish-all
+    - opt: --read-only
+    - opt: --restart
+      parm: string
+      syn:
+        []
+    - opt: --rm
+    - opt: --runtime
+      parm: string
+      syn:
+        []
+    - opt: --security-opt
+      parm: list
+      syn:
+        []
+    - opt: --shm-size
+      parm: bytes
+      syn:
+        []
+    - opt: --sig-proxy
+    - opt: --stop-signal
+      parm: string
+      syn:
+        []
+    - opt: --stop-timeout
+      parm: int
+      syn:
+        []
+    - opt: --storage-opt
+      parm: list
+      syn:
+        []
+    - opt: --sysctl
+      parm: map
+      syn:
+        []
+    - opt: --tmpfs
+      parm: list
+      syn:
+        []
+    - opt: -t
+      parm: ''
+      syn:
+      - --tty
+    - opt: --ulimit
+      parm: ulimit
+      syn:
+        []
+    - opt: -u
+      parm: string
+      syn:
+      - --user
+    - opt: --userns
+      parm: string
+      syn:
+        []
+    - opt: --uts
+      parm: string
+      syn:
+        []
+    - opt: -v
+      parm: list
+      syn:
+      - --volume
+    - opt: --volume-driver
+      parm: string
+      syn:
+        []
+    - opt: --volumes-from
+      parm: list
+      syn:
+        []
+    - opt: -w
+      parm: string
+      syn:
+      - --workdir
+    usage: docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+  save:
+    cmd: save
+    desc: Save one or more images to a tar archive (streamed to STDOUT by default)
+    options:
+    - opt: -o
+      parm: string
+      syn:
+      - --output
+    usage: docker save [OPTIONS] IMAGE [IMAGE...]
+  search:
+    cmd: search
+    desc: Search the Docker Hub for images
+    options:
+    - opt: -f
+      parm: filter
+      syn:
+      - --filter
+    - opt: --format
+      parm: string
+      syn:
+        []
+    - opt: --limit
+      parm: int
+      syn:
+        []
+    - opt: --no-trunc
+    usage: docker search [OPTIONS] TERM
+  secret:
+    cmd: secret
+    desc: Manage Docker secrets
+    subcmds:
+      create:
+        cmd: create
+        desc: Create a secret from a file or STDIN as content
+      inspect:
+        cmd: inspect
+        desc: Display detailed information on one or more secrets
+      ls:
+        cmd: ls
+        desc: List secrets
+      rm:
+        cmd: rm
+        desc: Remove one or more secrets
+    usage: docker secret COMMAND
+  service:
+    cmd: service
+    desc: Manage services
+    subcmds:
+      create:
+        cmd: create
+        desc: Create a new service
+      inspect:
+        cmd: inspect
+        desc: Display detailed information on one or more services
+      logs:
+        cmd: logs
+        desc: Fetch the logs of a service or task
+      ls:
+        cmd: ls
+        desc: List services
+      ps:
+        cmd: ps
+        desc: List the tasks of one or more services
+      rm:
+        cmd: rm
+        desc: Remove one or more services
+      rollback:
+        cmd: rollback
+        desc: Revert changes to a service's configuration
+      scale:
+        cmd: scale
+        desc: Scale one or multiple replicated services
+      update:
+        cmd: update
+        desc: Update a service
+    usage: docker service COMMAND
+  stack:
+    cmd: stack
+    desc: Manage Docker stacks
+    options:
+    - opt: --orchestrator
+      parm: string
+      syn:
+        []
+    subcmds:
+      deploy:
+        cmd: deploy
+        desc: Deploy a new stack or update an existing stack
+      ls:
+        cmd: ls
+        desc: List stacks
+      ps:
+        cmd: ps
+        desc: List the tasks in the stack
+      rm:
+        cmd: rm
+        desc: Remove one or more stacks
+      services:
+        cmd: services
+        desc: List the services in the stack
+    usage: docker stack [OPTIONS] COMMAND
+  start:
+    cmd: start
+    desc: Start one or more stopped containers
+    options:
+    - opt: -a
+      parm: ''
+      syn:
+      - --attach
+    - opt: --detach-keys
+      parm: string
+      syn:
+        []
+    - opt: -i
+      parm: ''
+      syn:
+      - --interactive
+    usage: docker start [OPTIONS] CONTAINER [CONTAINER...]
+  stats:
+    cmd: stats
+    desc: Display a live stream of container(s) resource usage statistics
+    options:
+    - opt: -a
+      parm: ''
+      syn:
+      - --all
+    - opt: --format
+      parm: string
+      syn:
+        []
+    - opt: --no-stream
+    - opt: --no-trunc
+    usage: docker stats [OPTIONS] [CONTAINER...]
+  stop:
+    cmd: stop
+    desc: Stop one or more running containers
+    options:
+    - opt: -t
+      parm: int
+      syn:
+      - --time
+    usage: docker stop [OPTIONS] CONTAINER [CONTAINER...]
+  swarm:
+    cmd: swarm
+    desc: Manage Swarm
+    subcmds:
+      ca:
+        cmd: ca
+        desc: Display and rotate the root CA
+      init:
+        cmd: init
+        desc: Initialize a swarm
+      join:
+        cmd: join
+        desc: Join a swarm as a node and/or manager
+      join-token:
+        cmd: join-token
+        desc: Manage join tokens
+      leave:
+        cmd: leave
+        desc: Leave the swarm
+      unlock:
+        cmd: unlock
+        desc: Unlock swarm
+      unlock-key:
+        cmd: unlock-key
+        desc: Manage the unlock key
+      update:
+        cmd: update
+        desc: Update the swarm
+    usage: docker swarm COMMAND
+  system:
+    cmd: system
+    desc: Manage Docker
+    subcmds:
+      df:
+        cmd: df
+        desc: Show docker disk usage
+      events:
+        cmd: events
+        desc: Get real time events from the server
+      info:
+        cmd: info
+        desc: Display system-wide information
+      prune:
+        cmd: prune
+        desc: Remove unused data
+    usage: docker system COMMAND
+  tag:
+    cmd: tag
+    desc: Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+    usage: docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+  top:
+    cmd: top
+    desc: Display the running processes of a container
+    usage: docker top CONTAINER [ps OPTIONS]
+  trust:
+    cmd: trust
+    desc: Manage trust on Docker images
+    subcmds:
+      inspect:
+        cmd: inspect
+        desc: Return low-level information about keys and signatures
+      key:
+        cmd: key
+        desc: Manage keys for signing Docker images
+      revoke:
+        cmd: revoke
+        desc: Remove trust for an image
+      sign:
+        cmd: sign
+        desc: Sign an image
+      signer:
+        cmd: signer
+        desc: Manage entities who can sign Docker images
+    usage: docker trust COMMAND
+  unpause:
+    cmd: unpause
+    desc: Unpause all processes within one or more containers
+    usage: docker unpause CONTAINER [CONTAINER...]
+  update:
+    cmd: update
+    desc: Update configuration of one or more containers
+    options:
+    - opt: --blkio-weight
+      parm: uint16
+      syn:
+        []
+    - opt: --cpu-period
+      parm: int
+      syn:
+        []
+    - opt: --cpu-quota
+      parm: int
+      syn:
+        []
+    - opt: --cpu-rt-period
+      parm: int
+      syn:
+        []
+    - opt: --cpu-rt-runtime
+      parm: int
+      syn:
+        []
+    - opt: -c
+      parm: int
+      syn:
+      - --cpu-shares
+    - opt: --cpus
+      parm: decimal
+      syn:
+        []
+    - opt: --cpuset-cpus
+      parm: string
+      syn:
+        []
+    - opt: --cpuset-mems
+      parm: string
+      syn:
+        []
+    - opt: --kernel-memory
+      parm: bytes
+      syn:
+        []
+    - opt: -m
+      parm: bytes
+      syn:
+      - --memory
+    - opt: --memory-reservation
+      parm: bytes
+      syn:
+        []
+    - opt: --memory-swap
+      parm: bytes
+      syn:
+        []
+    - opt: --restart
+      parm: string
+      syn:
+        []
+    usage: docker update [OPTIONS] CONTAINER [CONTAINER...]
+  version:
+    cmd: version
+    desc: Show the Docker version information
+    options:
+    - opt: -f
+      parm: string
+      syn:
+      - --format
+    - opt: --kubeconfig
+      parm: string
+      syn:
+        []
+    usage: docker version [OPTIONS]
+  volume:
+    cmd: volume
+    desc: Manage volumes
+    subcmds:
+      create:
+        cmd: create
+        desc: Create a volume
+      inspect:
+        cmd: inspect
+        desc: Display detailed information on one or more volumes
+      ls:
+        cmd: ls
+        desc: List volumes
+      prune:
+        cmd: prune
+        desc: Remove all unused local volumes
+      rm:
+        cmd: rm
+        desc: Remove one or more volumes
+    usage: docker volume COMMAND
+  wait:
+    cmd: wait
+    desc: Block until one or more containers stop, then print their exit codes
+    usage: docker wait CONTAINER [CONTAINER...]
+usage: docker [OPTIONS] COMMAND
