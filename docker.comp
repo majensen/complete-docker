@@ -1,0 +1,629 @@
+CompleteShell v0.2
+
+N docker v18.09.2 ..'A self-sufficient runtime for containers'
+  O --config =str                            ..TBD
+  O -D --debug                               ..TBD
+  O -H --host =str                           ..TBD
+  O -l --log-level =str                      ..TBD
+  O --tls                                    ..TBD
+  O --tlscacert =str                         ..TBD
+  O --tlscert =str                           ..TBD
+  O --tlskey =str                            ..TBD
+  O --tlsverify                              ..TBD
+  O -v --version                             ..TBD
+  # FIX ME...
+  A +'COMMAND'
+  C version                                  ..Show the Docker version information
+    O -f --format =str                       ..TBD
+    O --kubeconfig =str                      ..TBD
+  C container                                ..Manage containers
+    # FIX ME...
+    A +'COMMAND'
+    C inspect                                ..Display detailed information on one or more containers
+    C exec                                   ..Run a command in a running container
+    C update                                 ..Update configuration of one or more containers
+    C ls                                     ..List containers
+    C attach                                 ..Attach local standard input, output, and error streams to a running container
+    C wait                                   ..Block until one or more containers stop, then print their exit codes
+    C restart                                ..Restart one or more containers
+    C logs                                   ..Fetch the logs of a container
+    C prune                                  ..Remove all stopped containers
+    C create                                 ..Create a new container
+    C export                                 ..Export a container's filesystem as a tar archive
+    C unpause                                ..Unpause all processes within one or more containers
+    C pause                                  ..Pause all processes within one or more containers
+    C cp                                     ..Copy files/folders between a container and the local filesystem
+    C commit                                 ..Create a new image from a container's changes
+    C top                                    ..Display the running processes of a container
+    C start                                  ..Start one or more stopped containers
+    C diff                                   ..Inspect changes to files or directories on a container's filesystem
+    C rename                                 ..Rename a container
+    C stats                                  ..Display a live stream of container(s) resource usage statistics
+    C kill                                   ..Kill one or more running containers
+    C rm                                     ..Remove one or more containers
+    C run                                    ..Run a command in a new container
+    C stop                                   ..Stop one or more running containers
+    C port                                   ..List port mappings or a specific mapping for the container
+  C start                                    ..Start one or more stopped containers
+    O -a --attach                            ..TBD
+    O --detach-keys =str                     ..TBD
+    O -i --interactive                       ..TBD
+    # FIX ME...
+    A +'CONTAINER'
+    # FIX ME...
+    A +'[CONTAINER...]'
+  C top                                      ..Display the running processes of a container
+    # FIX ME...
+    A +'CONTAINER'
+    # FIX ME...
+    A +'[ps'
+    # FIX ME...
+    A +'OPTIONS]'
+  C push                                     ..Push an image or a repository to a registry
+    O --disable-content-trust                ..TBD
+    # FIX ME...
+    A +'NAME[:TAG]'
+  C cp                                       ..Copy files/folders between a container and the local filesystem
+    O -a --archive                           ..TBD
+    O -L --follow-link                       ..TBD
+    # FIX ME...
+    A +'CONTAINER:SRC_PATH'
+    # FIX ME...
+    A +'DEST_PATH|-'
+  C import                                   ..Import the contents from a tarball to create a filesystem image
+    O -c --change =str                       ..TBD
+    O -m --message =str                      ..TBD
+    # FIX ME...
+    A +'file|URL|-'
+    # FIX ME...
+    A +'[REPOSITORY[:TAG]]'
+  C unpause                                  ..Unpause all processes within one or more containers
+    # FIX ME...
+    A +'CONTAINER'
+    # FIX ME...
+    A +'[CONTAINER...]'
+  C image                                    ..Manage images
+    # FIX ME...
+    A +'COMMAND'
+    C rm                                     ..Remove one or more images
+    C load                                   ..Load an image from a tar archive or STDIN
+    C pull                                   ..Pull an image or a repository from a registry
+    C ls                                     ..List images
+    C history                                ..Show the history of an image
+    C save                                   ..Save one or more images to a tar archive (streamed to STDOUT by default)
+    C tag                                    ..Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+    C prune                                  ..Remove unused images
+    C build                                  ..Build an image from a Dockerfile
+    C push                                   ..Push an image or a repository to a registry
+    C import                                 ..Import the contents from a tarball to create a filesystem image
+    C inspect                                ..Display detailed information on one or more images
+  C secret                                   ..Manage Docker secrets
+    # FIX ME...
+    A +'COMMAND'
+    C inspect                                ..Display detailed information on one or more secrets
+    C create                                 ..Create a secret from a file or STDIN as content
+    C ls                                     ..List secrets
+    C rm                                     ..Remove one or more secrets
+  C create                                   ..Create a new container
+    O --add-host =str                        ..TBD
+    O -a --attach =str                       ..TBD
+    O --blkio-weight =num                    ..TBD
+    O --blkio-weight-device =str             ..TBD
+    O --cap-add =str                         ..TBD
+    O --cap-drop =str                        ..TBD
+    O --cgroup-parent =str                   ..TBD
+    O --cidfile =str                         ..TBD
+    O --cpu-period =num                      ..TBD
+    O --cpu-quota =num                       ..TBD
+    O --cpu-rt-period =num                   ..TBD
+    O --cpu-rt-runtime =num                  ..TBD
+    O -c --cpu-shares =num                   ..TBD
+    O --cpus =num                            ..TBD
+    O --cpuset-cpus =str                     ..TBD
+    O --cpuset-mems =str                     ..TBD
+    O --device =str                          ..TBD
+    O --device-cgroup-rule =str              ..TBD
+    O --device-read-bps =str                 ..TBD
+    O --device-read-iops =str                ..TBD
+    O --device-write-bps =str                ..TBD
+    O --device-write-iops =str               ..TBD
+    O --disable-content-trust                ..TBD
+    O --dns =str                             ..TBD
+    O --dns-option =str                      ..TBD
+    O --dns-search =str                      ..TBD
+    O --entrypoint =str                      ..TBD
+    O -e --env =str                          ..TBD
+    O --env-file =str                        ..TBD
+    O --expose =str                          ..TBD
+    O --group-add =str                       ..TBD
+    O --health-cmd =str                      ..TBD
+    O --health-interval =num                 ..TBD
+    O --health-retries =num                  ..TBD
+    O --health-start-period =num             ..TBD
+    O --health-timeout =num                  ..TBD
+    O --help                                 ..TBD
+    O -h --hostname =str                     ..TBD
+    O --init                                 ..TBD
+    O -i --interactive                       ..TBD
+    O --ip =str                              ..TBD
+    O --ip6 =str                             ..TBD
+    O --ipc =str                             ..TBD
+    O --isolation =str                       ..TBD
+    O --kernel-memory =num                   ..TBD
+    O -l --label =str                        ..TBD
+    O --label-file =str                      ..TBD
+    O --link =str                            ..TBD
+    O --link-local-ip =str                   ..TBD
+    O --log-driver =str                      ..TBD
+    O --log-opt =str                         ..TBD
+    O --mac-address =str                     ..TBD
+    O -m --memory =num                       ..TBD
+    O --memory-reservation =num              ..TBD
+    O --memory-swap =num                     ..TBD
+    O --memory-swappiness =num               ..TBD
+    O --mount =dir                           ..TBD
+    O --name =str                            ..TBD
+    O --network =str                         ..TBD
+    O --network-alias =str                   ..TBD
+    O --no-healthcheck                       ..TBD
+    O --oom-kill-disable                     ..TBD
+    O --oom-score-adj =num                   ..TBD
+    O --pid =str                             ..TBD
+    O --pids-limit =num                      ..TBD
+    O --privileged                           ..TBD
+    O -p --publish =str                      ..TBD
+    O -P --publish-all                       ..TBD
+    O --read-only                            ..TBD
+    O --restart =str                         ..TBD
+    O --rm                                   ..TBD
+    O --runtime =str                         ..TBD
+    O --security-opt =str                    ..TBD
+    O --shm-size =num                        ..TBD
+    O --stop-signal =str                     ..TBD
+    O --stop-timeout =num                    ..TBD
+    O --storage-opt =str                     ..TBD
+    O --sysctl =str                          ..TBD
+    O --tmpfs =str                           ..TBD
+    O -t --tty                               ..TBD
+    O --ulimit =num                          ..TBD
+    O -u --user =str                         ..TBD
+    O --userns =str                          ..TBD
+    O --uts =str                             ..TBD
+    O -v --volume =str                       ..TBD
+    O --volume-driver =str                   ..TBD
+    O --volumes-from =str                    ..TBD
+    O -w --workdir =str                      ..TBD
+    # FIX ME...
+    A +'IMAGE'
+    # FIX ME...
+    A +'[COMMAND]'
+    # FIX ME...
+    A +'[ARG...]'
+  C port                                     ..List port mappings or a specific mapping for the container
+    # FIX ME...
+    A +'CONTAINER'
+    # FIX ME...
+    A +'[PRIVATE_PORT[/PROTO]]'
+  C stop                                     ..Stop one or more running containers
+    O -t --time =num                         ..TBD
+    # FIX ME...
+    A +'CONTAINER'
+    # FIX ME...
+    A +'[CONTAINER...]'
+  C rm                                       ..Remove one or more containers
+    O -f --force                             ..TBD
+    O -l --link                              ..TBD
+    O -v --volumes                           ..TBD
+    # FIX ME...
+    A +'CONTAINER'
+    # FIX ME...
+    A +'[CONTAINER...]'
+  C service                                  ..Manage services
+    # FIX ME...
+    A +'COMMAND'
+    C inspect                                ..Display detailed information on one or more services
+    C update                                 ..Update a service
+    C create                                 ..Create a new service
+    C scale                                  ..Scale one or multiple replicated services
+    C logs                                   ..Fetch the logs of a service or task
+    C ps                                     ..List the tasks of one or more services
+    C rollback                               ..Revert changes to a service's configuration
+    C ls                                     ..List services
+    C rm                                     ..Remove one or more services
+  C volume                                   ..Manage volumes
+    # FIX ME...
+    A +'COMMAND'
+    C inspect                                ..Display detailed information on one or more volumes
+    C ls                                     ..List volumes
+    C create                                 ..Create a volume
+    C prune                                  ..Remove all unused local volumes
+    C rm                                     ..Remove one or more volumes
+  C search                                   ..Search the Docker Hub for images
+    O -f --filter =str                       ..TBD
+    O --format =str                          ..TBD
+    O --limit =num                           ..TBD
+    O --no-trunc                             ..TBD
+    # FIX ME...
+    A +'TERM'
+  C inspect                                  ..Return low-level information on Docker objects
+    O -f --format =str                       ..TBD
+    O -s --size                              ..TBD
+    O --type =str                            ..TBD
+    # FIX ME...
+    A +'NAME|ID'
+    # FIX ME...
+    A +'[NAME|ID...]'
+  C ps                                       ..List containers
+    O -a --all                               ..TBD
+    O -f --filter =str                       ..TBD
+    O --format =str                          ..TBD
+    O -n --last =num                         ..TBD
+    O -l --latest                            ..TBD
+    O --no-trunc                             ..TBD
+    O -q --quiet                             ..TBD
+    O -s --size                              ..TBD
+  C logs                                     ..Fetch the logs of a container
+    O --details                              ..TBD
+    O -f --follow                            ..TBD
+    O --since =str                           ..TBD
+    O --tail =str                            ..TBD
+    O -t --timestamps                        ..TBD
+    O --until =str                           ..TBD
+    # FIX ME...
+    A +'CONTAINER'
+  C attach                                   ..Attach local standard input, output, and error streams to a running container
+    O --detach-keys =str                     ..TBD
+    O --no-stdin                             ..TBD
+    O --sig-proxy                            ..TBD
+    # FIX ME...
+    A +'CONTAINER'
+  C builder                                  ..Manage builds
+    # FIX ME...
+    A +'COMMAND'
+    C prune                                  ..Remove build cache
+  C trust                                    ..Manage trust on Docker images
+    # FIX ME...
+    A +'COMMAND'
+    C signer                                 ..Manage entities who can sign Docker images
+    C key                                    ..Manage keys for signing Docker images
+    C inspect                                ..Return low-level information about keys and signatures
+    C sign                                   ..Sign an image
+    C revoke                                 ..Remove trust for an image
+  C diff                                     ..Inspect changes to files or directories on a container's filesystem
+    # FIX ME...
+    A +'CONTAINER'
+  C commit                                   ..Create a new image from a container's changes
+    O -a --author =str                       ..TBD
+    O -c --change =str                       ..TBD
+    O -m --message =str                      ..TBD
+    O -p --pause                             ..TBD
+    # FIX ME...
+    A +'CONTAINER'
+    # FIX ME...
+    A +'[REPOSITORY[:TAG]]'
+  C pause                                    ..Pause all processes within one or more containers
+    # FIX ME...
+    A +'CONTAINER'
+    # FIX ME...
+    A +'[CONTAINER...]'
+  C events                                   ..Get real time events from the server
+    O -f --filter =str                       ..TBD
+    O --format =str                          ..TBD
+    O --since =str                           ..TBD
+    O --until =str                           ..TBD
+  C tag                                      ..Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+    # FIX ME...
+    A +'SOURCE_IMAGE[:TAG]'
+    # FIX ME...
+    A +'TARGET_IMAGE[:TAG]'
+  C config                                   ..Manage Docker configs
+    # FIX ME...
+    A +'COMMAND'
+    C ls                                     ..List configs
+    C create                                 ..Create a config from a file or STDIN
+    C rm                                     ..Remove one or more configs
+    C inspect                                ..Display detailed information on one or more configs
+  C export                                   ..Export a container's filesystem as a tar archive
+    O -o --output =str                       ..TBD
+    # FIX ME...
+    A +'CONTAINER'
+  C logout                                   ..Log out from a Docker registry
+    # FIX ME...
+    A +'[SERVER]'
+  C login                                    ..Log in to a Docker registry
+    O -p --password =str                     ..TBD
+    O --password-stdin                       ..TBD
+    O -u --username =str                     ..TBD
+    # FIX ME...
+    A +'[SERVER]'
+  C run                                      ..Run a command in a new container
+    O --add-host =str                        ..TBD
+    O -a --attach =str                       ..TBD
+    O --blkio-weight =num                    ..TBD
+    O --blkio-weight-device =str             ..TBD
+    O --cap-add =str                         ..TBD
+    O --cap-drop =str                        ..TBD
+    O --cgroup-parent =str                   ..TBD
+    O --cidfile =str                         ..TBD
+    O --cpu-period =num                      ..TBD
+    O --cpu-quota =num                       ..TBD
+    O --cpu-rt-period =num                   ..TBD
+    O --cpu-rt-runtime =num                  ..TBD
+    O -c --cpu-shares =num                   ..TBD
+    O --cpus =num                            ..TBD
+    O --cpuset-cpus =str                     ..TBD
+    O --cpuset-mems =str                     ..TBD
+    O -d --detach                            ..TBD
+    O --detach-keys =str                     ..TBD
+    O --device =str                          ..TBD
+    O --device-cgroup-rule =str              ..TBD
+    O --device-read-bps =str                 ..TBD
+    O --device-read-iops =str                ..TBD
+    O --device-write-bps =str                ..TBD
+    O --device-write-iops =str               ..TBD
+    O --disable-content-trust                ..TBD
+    O --dns =str                             ..TBD
+    O --dns-option =str                      ..TBD
+    O --dns-search =str                      ..TBD
+    O --entrypoint =str                      ..TBD
+    O -e --env =str                          ..TBD
+    O --env-file =str                        ..TBD
+    O --expose =str                          ..TBD
+    O --group-add =str                       ..TBD
+    O --health-cmd =str                      ..TBD
+    O --health-interval =num                 ..TBD
+    O --health-retries =num                  ..TBD
+    O --health-start-period =num             ..TBD
+    O --health-timeout =num                  ..TBD
+    O --help                                 ..TBD
+    O -h --hostname =str                     ..TBD
+    O --init                                 ..TBD
+    O -i --interactive                       ..TBD
+    O --ip =str                              ..TBD
+    O --ip6 =str                             ..TBD
+    O --ipc =str                             ..TBD
+    O --isolation =str                       ..TBD
+    O --kernel-memory =num                   ..TBD
+    O -l --label =str                        ..TBD
+    O --label-file =str                      ..TBD
+    O --link =str                            ..TBD
+    O --link-local-ip =str                   ..TBD
+    O --log-driver =str                      ..TBD
+    O --log-opt =str                         ..TBD
+    O --mac-address =str                     ..TBD
+    O -m --memory =num                       ..TBD
+    O --memory-reservation =num              ..TBD
+    O --memory-swap =num                     ..TBD
+    O --memory-swappiness =num               ..TBD
+    O --mount =dir                           ..TBD
+    O --name =str                            ..TBD
+    O --network =str                         ..TBD
+    O --network-alias =str                   ..TBD
+    O --no-healthcheck                       ..TBD
+    O --oom-kill-disable                     ..TBD
+    O --oom-score-adj =num                   ..TBD
+    O --pid =str                             ..TBD
+    O --pids-limit =num                      ..TBD
+    O --privileged                           ..TBD
+    O -p --publish =str                      ..TBD
+    O -P --publish-all                       ..TBD
+    O --read-only                            ..TBD
+    O --restart =str                         ..TBD
+    O --rm                                   ..TBD
+    O --runtime =str                         ..TBD
+    O --security-opt =str                    ..TBD
+    O --shm-size =num                        ..TBD
+    O --sig-proxy                            ..TBD
+    O --stop-signal =str                     ..TBD
+    O --stop-timeout =num                    ..TBD
+    O --storage-opt =str                     ..TBD
+    O --sysctl =str                          ..TBD
+    O --tmpfs =str                           ..TBD
+    O -t --tty                               ..TBD
+    O --ulimit =num                          ..TBD
+    O -u --user =str                         ..TBD
+    O --userns =str                          ..TBD
+    O --uts =str                             ..TBD
+    O -v --volume =str                       ..TBD
+    O --volume-driver =str                   ..TBD
+    O --volumes-from =str                    ..TBD
+    O -w --workdir =str                      ..TBD
+    # FIX ME...
+    A +'IMAGE'
+    # FIX ME...
+    A +'[COMMAND]'
+    # FIX ME...
+    A +'[ARG...]'
+  C pull                                     ..Pull an image or a repository from a registry
+    O -a --all-tags                          ..TBD
+    O --disable-content-trust                ..TBD
+    # FIX ME...
+    A +'NAME[:TAG|@DIGEST]'
+  C kill                                     ..Kill one or more running containers
+    O -s --signal =str                       ..TBD
+    # FIX ME...
+    A +'CONTAINER'
+    # FIX ME...
+    A +'[CONTAINER...]'
+  C stats                                    ..Display a live stream of container(s) resource usage statistics
+    O -a --all                               ..TBD
+    O --format =str                          ..TBD
+    O --no-stream                            ..TBD
+    O --no-trunc                             ..TBD
+    # FIX ME...
+    A +'[CONTAINER...]'
+  C history                                  ..Show the history of an image
+    O --format =str                          ..TBD
+    O -H --human                             ..TBD
+    O --no-trunc                             ..TBD
+    O -q --quiet                             ..TBD
+    # FIX ME...
+    A +'IMAGE'
+  C rename                                   ..Rename a container
+    # FIX ME...
+    A +'CONTAINER'
+    # FIX ME...
+    A +'NEW_NAME'
+  C rmi                                      ..Remove one or more images
+    O -f --force                             ..TBD
+    O --no-prune                             ..TBD
+    # FIX ME...
+    A +'IMAGE'
+    # FIX ME...
+    A +'[IMAGE...]'
+  C update                                   ..Update configuration of one or more containers
+    O --blkio-weight =num                    ..TBD
+    O --cpu-period =num                      ..TBD
+    O --cpu-quota =num                       ..TBD
+    O --cpu-rt-period =num                   ..TBD
+    O --cpu-rt-runtime =num                  ..TBD
+    O -c --cpu-shares =num                   ..TBD
+    O --cpus =num                            ..TBD
+    O --cpuset-cpus =str                     ..TBD
+    O --cpuset-mems =str                     ..TBD
+    O --kernel-memory =num                   ..TBD
+    O -m --memory =num                       ..TBD
+    O --memory-reservation =num              ..TBD
+    O --memory-swap =num                     ..TBD
+    O --restart =str                         ..TBD
+    # FIX ME...
+    A +'CONTAINER'
+    # FIX ME...
+    A +'[CONTAINER...]'
+  C build                                    ..Build an image from a Dockerfile
+    O --add-host =str                        ..TBD
+    O --build-arg =str                       ..TBD
+    O --cache-from =str                      ..TBD
+    O --cgroup-parent =str                   ..TBD
+    O --compress                             ..TBD
+    O --cpu-period =num                      ..TBD
+    O --cpu-quota =num                       ..TBD
+    O -c --cpu-shares =num                   ..TBD
+    O --cpuset-cpus =str                     ..TBD
+    O --cpuset-mems =str                     ..TBD
+    O --disable-content-trust                ..TBD
+    O -f --file =str                         ..TBD
+    O --force-rm                             ..TBD
+    O --iidfile =str                         ..TBD
+    O --isolation =str                       ..TBD
+    O --label =str                           ..TBD
+    O -m --memory =num                       ..TBD
+    O --memory-swap =num                     ..TBD
+    O --network =str                         ..TBD
+    O --no-cache                             ..TBD
+    O --pull                                 ..TBD
+    O -q --quiet                             ..TBD
+    O --rm                                   ..TBD
+    O --security-opt =str                    ..TBD
+    O --shm-size =num                        ..TBD
+    O -t --tag =str                          ..TBD
+    O --target =str                          ..TBD
+    O --ulimit =num                          ..TBD
+    # FIX ME...
+    A +'PATH | URL | -'
+  C network                                  ..Manage networks
+    # FIX ME...
+    A +'COMMAND'
+    C create                                 ..Create a network
+    C ls                                     ..List networks
+    C prune                                  ..Remove all unused networks
+    C disconnect                             ..Disconnect a container from a network
+    C rm                                     ..Remove one or more networks
+    C connect                                ..Connect a container to a network
+    C inspect                                ..Display detailed information on one or more networks
+  C plugin                                   ..Manage plugins
+    # FIX ME...
+    A +'COMMAND'
+    C enable                                 ..Enable a plugin
+    C disable                                ..Disable a plugin
+    C ls                                     ..List plugins
+    C rm                                     ..Remove one or more plugins
+    C set                                    ..Change settings for a plugin
+    C inspect                                ..Display detailed information on one or more plugins
+    C upgrade                                ..Upgrade an existing plugin
+    C push                                   ..Push a plugin to a registry
+    C install                                ..Install a plugin
+    C create                                 ..Create a plugin from a rootfs and configuration. Plugin data directory must contain config.json and rootfs directory.
+  C exec                                     ..Run a command in a running container
+    O -d --detach                            ..TBD
+    O --detach-keys =str                     ..TBD
+    O -e --env =str                          ..TBD
+    O -i --interactive                       ..TBD
+    O --privileged                           ..TBD
+    O -t --tty                               ..TBD
+    O -u --user =str                         ..TBD
+    O -w --workdir =str                      ..TBD
+    # FIX ME...
+    A +'CONTAINER'
+    # FIX ME...
+    A +'COMMAND'
+    # FIX ME...
+    A +'[ARG...]'
+  C swarm                                    ..Manage Swarm
+    # FIX ME...
+    A +'COMMAND'
+    C ca                                     ..Display and rotate the root CA
+    C join                                   ..Join a swarm as a node and/or manager
+    C unlock                                 ..Unlock swarm
+    C init                                   ..Initialize a swarm
+    C update                                 ..Update the swarm
+    C unlock-key                             ..Manage the unlock key
+    C leave                                  ..Leave the swarm
+    C join-token                             ..Manage join tokens
+  C node                                     ..Manage Swarm nodes
+    # FIX ME...
+    A +'COMMAND'
+    C rm                                     ..Remove one or more nodes from the swarm
+    C demote                                 ..Demote one or more nodes from manager in the swarm
+    C ls                                     ..List nodes in the swarm
+    C ps                                     ..List tasks running on one or more nodes, defaults to current node
+    C update                                 ..Update a node
+    C promote                                ..Promote one or more nodes to manager in the swarm
+    C inspect                                ..Display detailed information on one or more nodes
+  C restart                                  ..Restart one or more containers
+    O -t --time =num                         ..TBD
+    # FIX ME...
+    A +'CONTAINER'
+    # FIX ME...
+    A +'[CONTAINER...]'
+  C stack                                    ..Manage Docker stacks
+    O --orchestrator =str                    ..TBD
+    # FIX ME...
+    A +'COMMAND'
+    C ps                                     ..List the tasks in the stack
+    C deploy                                 ..Deploy a new stack or update an existing stack
+    C ls                                     ..List stacks
+    C services                               ..List the services in the stack
+    C rm                                     ..Remove one or more stacks
+  C wait                                     ..Block until one or more containers stop, then print their exit codes
+    # FIX ME...
+    A +'CONTAINER'
+    # FIX ME...
+    A +'[CONTAINER...]'
+  C load                                     ..Load an image from a tar archive or STDIN
+    O -i --input =str                        ..TBD
+    O -q --quiet                             ..TBD
+  C info                                     ..Display system-wide information
+    O -f --format =str                       ..TBD
+  C system                                   ..Manage Docker
+    # FIX ME...
+    A +'COMMAND'
+    C events                                 ..Get real time events from the server
+    C df                                     ..Show docker disk usage
+    C info                                   ..Display system-wide information
+    C prune                                  ..Remove unused data
+  C images                                   ..List images
+    O -a --all                               ..TBD
+    O --digests                              ..TBD
+    O -f --filter =str                       ..TBD
+    O --format =str                          ..TBD
+    O --no-trunc                             ..TBD
+    O -q --quiet                             ..TBD
+    # FIX ME...
+    A +'[REPOSITORY[:TAG]]'
+  C save                                     ..Save one or more images to a tar archive (streamed to STDOUT by default)
+    O -o --output =str                       ..TBD
+    # FIX ME...
+    A +'IMAGE'
+    # FIX ME...
+    A +'[IMAGE...]'
